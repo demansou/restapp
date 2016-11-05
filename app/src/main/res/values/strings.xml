@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">REST APP</string>
+    <string name="label_sequence_organism">Organism</string>
+    <string name="label_sequence_name">Name</string>
+    <string name="label_sequence_description">Description</string>
+</resources>
