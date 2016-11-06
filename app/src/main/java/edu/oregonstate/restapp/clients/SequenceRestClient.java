@@ -9,6 +9,9 @@ import com.loopj.android.http.RequestParams;
 import cz.msebera.android.httpclient.Header;
 
 public class SequenceRestClient {
+    /* test server */
+    //private static final String BASE_URL = "http://127.0.0.1:8080/";
+
     /* amazon aws server hosting REST API */
     private static final String BASE_URL = "http://54.71.203.108:8080/";
 
@@ -21,12 +24,10 @@ public class SequenceRestClient {
         client.get(context, getAbsoluteUrl(url), headers, params, responseHandler);
     }
 
-    /* HTTP POST request
-    public static void post(Context context, String url, Header[] headers, RequestParams params,
-                            AsyncHttpResponseHandler responseHandler) {
-        client.post(context, getAbsoluteUrl(url), headers, params, responseHandler);
+    /* NEW HTTP POST request */
+    public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.post(getAbsoluteUrl(url), params, responseHandler);
     }
-    */
 
     /* Converts relative urls to absolute urls */
     private static String getAbsoluteUrl(String relativeUrl) {

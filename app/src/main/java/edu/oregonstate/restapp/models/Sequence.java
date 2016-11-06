@@ -9,9 +9,13 @@ public class Sequence {
     private String Name;
     private String Description;
     private String Sequence;
-    private String Length;
-    private String Num_features;
+    private int Length;
+    private int Num_features;
 
+    /**
+     * Constructor for use when dealing with HTTP GET
+     * @param object JSON object
+     */
     public Sequence(JSONObject object) {
         try {
             this.Organism = object.getString("organism");
@@ -19,15 +23,25 @@ public class Sequence {
             this.Name = object.getString("name");
             this.Description = object.getString("description");
             this.Sequence = object.getString("sequence");
-            this.Length = object.getString("length");
-            this.Num_features = object.getString("num_features");
+            this.Length = object.getInt("length");
+            this.Num_features = object.getInt("num_features");
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Constructor for use when dealing with HTTP POST
+     * @param Organism String
+     * @param Sequence_id String
+     * @param Name String
+     * @param Description String
+     * @param Sequence String
+     * @param Length Integer
+     * @param Num_features Integer
+     */
     public Sequence(String Organism, String Sequence_id, String Name, String Description,
-                    String Sequence, String Length, String Num_features) {
+                    String Sequence, int Length, int Num_features) {
         this.Organism = Organism;
         this.Sequence_id = Sequence_id;
         this.Name = Name;
@@ -57,11 +71,11 @@ public class Sequence {
         return this.Sequence;
     }
 
-    public String getLength() {
+    public int getLength() {
         return this.Length;
     }
 
-    public String getNumFeatures() {
+    public int getNumFeatures() {
         return this.Num_features;
     }
 }
