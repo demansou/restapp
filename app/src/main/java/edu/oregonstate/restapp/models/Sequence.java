@@ -4,6 +4,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Sequence {
+
+    /* Sequence object attributes */
     private String Organism;
     private String Sequence_id;
     private String Name;

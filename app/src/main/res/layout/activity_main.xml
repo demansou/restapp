@@ -16,19 +16,17 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/button_add_activity" />
 
-
-
     <Button
         android:id="@+id/button_add_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Sequence"
+        android:text="@string/add_sequence"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Sequences"
+        android:text="@string/sequences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"

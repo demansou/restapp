@@ -39,8 +39,13 @@ public class SequenceAdapter extends ArrayAdapter<Sequence> {
             convertView = inflater.inflate(R.layout.item_sequence, parent, false);
 
             viewHolder.organism = (TextView) convertView.findViewById(R.id.value_sequence_organism);
+            viewHolder.sequence_id = (TextView) convertView.findViewById(R.id.value_sequence_id);
             viewHolder.name = (TextView) convertView.findViewById(R.id.value_sequence_name);
             viewHolder.description = (TextView) convertView.findViewById(R.id.value_sequence_description);
+            viewHolder.sequence = (TextView) convertView.findViewById(R.id.value_sequence_sequence);
+            viewHolder.length = (TextView) convertView.findViewById(R.id.value_sequence_length);
+            viewHolder.num_features = (TextView) convertView.findViewById(R.id.value_sequence_num_features);
+
 
             convertView.setTag(viewHolder);
         } else {
@@ -48,8 +53,12 @@ public class SequenceAdapter extends ArrayAdapter<Sequence> {
         }
 
         viewHolder.organism.setText(sequence.getOrganism());
+        viewHolder.sequence_id.setText(sequence.getSequenceId());
         viewHolder.name.setText(sequence.getName());
         viewHolder.description.setText(sequence.getDescription());
+        viewHolder.sequence.setText(sequence.getSequence());
+        viewHolder.length.setText(String.valueOf(sequence.getLength()));
+        viewHolder.num_features.setText(String.valueOf(sequence.getNumFeatures()));
 
         return convertView;
     }

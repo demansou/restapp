@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">REST APP</string>
     <string name="label_sequence_organism">Organism</string>
+    <string name="label_sequence_id">Sequence Id</string>
     <string name="label_sequence_name">Name</string>
     <string name="label_sequence_description">Description</string>
+    <string name="label_sequence_sequence">Sequence</string>
+    <string name="label_sequence_length">Length</string>
+    <string name="label_sequence_num_features">Num Features</string>
+    <string name="sequences">Sequences</string>
+    <string name="add_sequence">Add Sequence</string>
 </resources>

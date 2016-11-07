@@ -15,7 +15,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"/>
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/label_sequence_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/label_sequence_id" />
+
+    <TextView
+        android:id="@+id/value_sequence_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
 
     <TextView
         android:id="@+id/label_sequence_name"
@@ -43,6 +57,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"/>
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/label_sequence_sequence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/label_sequence_sequence" />
+
+    <TextView
+        android:id="@+id/value_sequence_sequence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        android:ellipsize="end"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/label_sequence_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/label_sequence_length" />
+
+    <TextView
+        android:id="@+id/value_sequence_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/label_sequence_num_features"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/label_sequence_num_features" />
+
+    <TextView
+        android:id="@+id/value_sequence_num_features"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
 
 </LinearLayout>
