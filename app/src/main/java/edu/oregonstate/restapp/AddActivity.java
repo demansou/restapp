@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
+import android.util.Log;
 
 import edu.oregonstate.restapp.clients.SequenceRestClient;
-import edu.oregonstate.restapp.models.Sequence;
+import edu.oregonstate.restapp.models.Cluster;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -21,7 +22,7 @@ public class AddActivity extends AppCompatActivity {
     private Button submitButton;
     private EditText textOrganism;
     private EditText textName;
-    private EditText textDescription;
+    private EditText textNumberOfSequences;
 
     /**
      * Method that is called when accessing AddActivity
@@ -34,7 +35,7 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         /* Creates layout on page */
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_add_cluster);
 
         /* retrieves sequences from REST API */
         submitForm();
@@ -46,7 +47,7 @@ public class AddActivity extends AppCompatActivity {
     public void submitForm() {
 
         /* Adds XML button id to Button object */
-        submitButton = (Button) findViewById(R.id.button_sequence_submit);
+        submitButton = (Button) findViewById(R.id.button_cluster_submit);
 
         /* Adds event listener to Button object */
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -56,27 +57,25 @@ public class AddActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 /* Adds XML edit text ids to EditText objects */
-                textOrganism = (EditText) findViewById(R.id.edit_text_organism);
-                textName = (EditText) findViewById(R.id.edit_text_name);
-                textDescription = (EditText) findViewById(R.id.edit_text_description);
+                textOrganism = (EditText) findViewById(R.id.edit_organism);
+                textName = (EditText) findViewById(R.id.edit_cluster_name);
+                textNumberOfSequences = (EditText) findViewById(R.id.edit_number_of_sequences);
 
                 /* Generate Sequence object attribute values */
                 String Organism = textOrganism.getText().toString();
-                String Sequence_id = "";
                 String Name = textName.getText().toString();
-                String Description = textDescription.getText().toString();
-                String Sequence = "";
-                int Length = -1;
-                int Num_features = -1;
+                String NumberOfSequences = textNumberOfSequences.getText().toString();
 
-                /* Generate Sequence object with attribute values gathered */
-                Sequence sequence = new Sequence(Organism, Sequence_id, Name, Description, Sequence, Length, Num_features);
+                /* Generate Cluster object with attribute values gathered */
+                Cluster cluster = new Cluster(Organism, Name, NumberOfSequences);
 
                 /* Create parameters for request*/
                 RequestParams params = new RequestParams();
-                params.add("organism", sequence.getOrganism());
-                params.add("name", sequence.getName());
-                params.add("description", sequence.getDescription());
+                params.add("action", "cluster");
+                params.add("organism", cluster.getOrganism());
+                params.add("cluster_name", cluster.getName());
+                params.add("num_sequences", cluster.getNumberOfSequences());
+                params.add("user_auth_token", ((MyApplication) getApplication()).getUserAuthToken());
 
                 /* HTTP POST */
                 SequenceRestClient.post("requests", params, new AsyncHttpResponseHandler() {
@@ -91,7 +90,7 @@ public class AddActivity extends AppCompatActivity {
                     /* Overrides default onFailure call */
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        System.out.println("Failed POST");
+                        System.out.println("Failed Add Cluster");
                     }
                 });
             }

@@ -7,6 +7,17 @@
     <string name="label_sequence_sequence">Sequence</string>
     <string name="label_sequence_length">Length</string>
     <string name="label_sequence_num_features">Num Features</string>
-    <string name="sequences">Sequences</string>
-    <string name="add_sequence">Add Sequence</string>
+    <string name="clusters">Clusters</string>
+    <string name="add_cluster">Add Cluster</string>
+
+    <string name="label_cluster_id">Cluster ID:</string>
+    <string name="label_cluster_name">Cluster Name:</string>
+    <string name="label_organism">Organism:</string>
+    <string name="label_number_of_sequences">Number of Sequences:</string>
+    <string name="button_cluster_submit">Submit</string>
+
+    <string name="label_user_name">User Name:</string>
+    <string name="button_login_submit">Login</string>
+    <string name="button_login">Login</string>
+    <string name="button_logout">Logout</string>
 </resources>

@@ -11,22 +11,22 @@
     tools:context="edu.oregonstate.restapp.MainActivity">
 
     <ListView
-        android:id="@+id/list_sequence"
+        android:id="@+id/list_cluster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/button_add_activity" />
+        android:layout_below="@+id/button_add_cluster" />
 
     <Button
-        android:id="@+id/button_add_activity"
+        android:id="@+id/button_add_cluster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_sequence"
+        android:text="@string/add_cluster"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="@string/sequences"
+        android:text="@string/clusters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
@@ -34,6 +34,24 @@
         android:layout_above="@+id/list_sequence"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_login"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button_add_cluster"
+        android:layout_toStartOf="@+id/button_add_cluster" />
+
+    <Button
+        android:text="@string/button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_logout"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button_login"
+        android:layout_toStartOf="@+id/button_login" />
 
 
 </RelativeLayout>

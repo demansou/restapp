@@ -10,7 +10,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class SequenceRestClient {
     /* test server */
-    //private static final String BASE_URL = "http://127.0.0.1:8080/";
+    // private static final String BASE_URL = "http://10.0.0.171:8080/";
 
     /* amazon aws server hosting REST API */
     private static final String BASE_URL = "http://54.71.203.108:8080/";
